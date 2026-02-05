@@ -1,0 +1,887 @@
+:root{
+  --bg: whitesmoke;
+  --ink: #0f172a;
+  --muted: #475569;
+  --cyan: #00e5ff;
+  --cyan2:#00bcd4;
+  --card: rgba(255,255,255,.78);
+  --shadow: 0 12px 30px rgba(2, 8, 23, .12);
+  --radius: 18px;
+  --navH: 106px;
+  --border: rgba(2,8,23,.10);
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+
+body{
+  margin:0;
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(900px 500px at 80% -80px, rgba(0,229,255,.30), transparent 60%),
+    radial-gradient(700px 450px at 10% 0px, rgba(0,188,212,.22), transparent 60%),
+    var(--bg);
+}
+
+/* NAVBAR */
+
+
+.nav{
+	  margin: 0 auto;
+
+	border-radius: 20px !important;
+  position:sticky; top:0; z-index:50;
+  height:var(--navH);
+  backdrop-filter: blur(10px);
+  background: rgba(245,245,245,.72);
+  border-bottom: 1px solid var(--border);
+}
+.nav {
+	
+	padding:20px;
+}
+.nav-inner{
+  max-width: 1100px; margin:0 auto; height:100%;
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 0 18px;
+  gap:12px;
+}
+.brand{
+  display:flex; align-items:center; gap:10px;
+  font-weight:900; letter-spacing:.2px;
+}
+.brand-title{ font-weight: 900; }
+.brand-badge{
+  width:40px;height:40px;border-radius:12px;
+  display:grid;place-items:center;
+  background: linear-gradient(135deg, rgba(0,229,255,.25), rgba(0,188,212,.10));
+  border: 1px solid rgba(0,188,212,.35);
+  box-shadow: 0 10px 20px rgba(0,188,212,.12);
+  color: var(--cyan2);
+  font-size: 19px;
+  user-select:none;
+}
+.navlinks{
+	  max-width: 900px;
+  display:flex; align-items:center; gap: 14px;
+}
+.navlinks a{
+  text-decoration:none; color: var(--muted);
+  font-weight:800; font-size:17px;
+  padding: 10px 10px; border-radius: 12px;
+  transition:.2s;
+}
+.navlinks a:hover{
+  color: var(--ink);
+  background: rgba(0,229,255,.10);
+}
+
+.cta-wrapper {
+	 display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.cta{
+
+	
+  text-decoration:none;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-weight:900;
+  color: #00161a;
+  background: linear-gradient(135deg, var(--cyan), #7cf7ff);
+  border: 1px solid rgba(0,188,212,.35);
+  box-shadow: 0 12px 24px rgba(0,229,255,.22);
+  display:flex; align-items:center; gap:10px;
+  white-space:nowrap;
+  transition:.15s;
+}
+.cta:hover{ transform: translateY(-1px); }
+
+/* LAYOUT */
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding: 24px 18px 70px;
+}
+section{ scroll-margin-top: calc(var(--navH) + 18px); }
+
+.grid-hero{
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 18px;
+  align-items:stretch;
+  margin-top: 18px;
+}
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+.hero-title{
+  font-size: clamp(26px, 3.6vw, 44px);
+  
+  letter-spacing: -0.4px;
+	
+	margin-left: 76px;
+	margin-bottom:30px;
+}
+.hero-sub{
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+	
+	margin-left: 115px;
+	margin-top:10px;
+	
+}
+
+/* PHOTO */
+.photo{
+  position:relative;
+  overflow:hidden;
+  min-height: 320px;
+  padding: 0;
+}
+.photo .img{
+  width:100%;
+  height:100%;
+  min-height: 320px;
+  object-fit: cover;
+  display:block;
+  filter: contrast(1.02) saturate(1.02);
+}
+.photo-overlay{
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(245,245,245,.04), rgba(245,245,245,.70));
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding: 16px;
+  gap: 8px;
+}
+.photo-overlay .tag{
+  display:inline-flex; align-items:center; gap:8px;
+  width: fit-content;
+  padding: 9px 11px;
+  border-radius: 999px;
+  background: rgba(245,245,245,.85);
+  border: 1px solid rgba(2,8,23,.10);
+  font-weight: 900;
+  color: #082f35;
+}
+
+/* ICON LINKS */
+.icons{
+  display:flex; gap:10px; flex-wrap:wrap;
+  margin-top: 10px;
+	margin-left:124px;
+}
+.iconbtn{
+  width:44px;height:44px;border-radius:14px;
+  display:grid;place-items:center;
+  text-decoration:none;
+  background: rgba(255,255,255,.80);
+  border:1px solid var(--border);
+  box-shadow: 0 10px 18px rgba(2,8,23,.08);
+  color: #0b3a43;
+  transition:.18s;
+}
+.iconbtn:hover{
+  transform: translateY(-2px);
+  border-color: rgba(0,188,212,.45);
+  box-shadow: 0 14px 26px rgba(0,188,212,.18);
+}
+
+/* SECTIONS */
+.section-title{
+  margin: 28px 0 10px;
+  font-size: 30px;
+  letter-spacing: -0.2px;
+}
+.muted{
+  color:var(--muted);
+  line-height:1.65;
+  font-size:18px;
+}
+.grid-2{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.list{
+	font-size:13px;
+  margin: 10px 0 0;
+  padding-left: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.proj{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap: 12px;
+}
+.proj a{
+  text-decoration:none;
+  color: #003d45;
+  font-weight: 500;
+  word-break: break-word;
+}
+.proj a:hover{ color: var(--cyan2); }
+.mini{
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+.chip{
+  font-size:12px;
+  font-weight:500;
+  padding: 7px 10px;
+  border-radius:999px;
+  background: rgba(0,229,255,.12);
+  border:1px solid rgba(0,188,212,.22);
+  color:#063f48;
+  white-space:nowrap;
+  user-select:none;
+}
+
+/* BUTTONS */
+.btn{
+  cursor:pointer;
+  border:0;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-weight: 900;
+  color: #00161a;
+  background: linear-gradient(135deg, var(--cyan), #7cf7ff);
+  border: 1px solid rgba(0,188,212,.35);
+  box-shadow: 0 12px 24px rgba(0,229,255,.18);
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  transition:.15s;
+}
+.btn:hover{ transform: translateY(-1px); }
+.btn:active{ transform: translateY(1px); }
+.btnrow{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+	
+  margin-top: 40px;
+	margin-left:180px;
+}
+
+/* CONTACT */
+form{ display:grid; gap:12px; }
+label{ font-weight:500; font-size:13px; }
+input, textarea{
+  width:100%;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(2,8,23,.14);
+  background: rgba(255,255,255,.82);
+  outline:none;
+  font-size: 14px;
+  font-family: inherit;
+}
+input:focus, textarea:focus{
+  border-color: rgba(0,188,212,.55);
+  box-shadow: 0 0 0 4px rgba(0,229,255,.18);
+}
+textarea{ min-height:120px; resize:vertical; }
+.sendrow{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.note{ font-size:14px; color:var(--muted);
+margin-left:160px;
+}
+
+/* REVEAL EFFECT */
+.reveal{
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.reveal.show{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .grid-hero{ grid-template-columns:1fr; }
+  .grid-2{ grid-template-columns:1fr; }
+  .navlinks{ display:none; }
+}
+
+/* FOTOĞRAF KÜÇÜLTME */
+.photo { 
+  min-height: 160px !important; 
+}
+.photo .img{
+  max-height: 260px !important;    /* fotoğrafın üst sınırı */
+  object-fit: contain !important;  /* kırpma olmasın */
+  padding: 12px !important;        /* kenarlardan nefes */
+  background: rgba(255,255,255,.6);
+}
+/* SOL KART YAZILARI BÜYÜT + BOŞLUK */
+.hero-title{ 
+  font-size: clamp(30px, 3.2vw, 48px) !important; 
+  line-height: 1.1 !important;
+}
+.hero-sub{
+  font-size: 18px !important;
+  margin-top: 8px !important;
+}
+.note{
+  font-size: 18px !important;
+  margin-top: 12px !important;
+  line-height: 1.6 !important;
+	margin-left:160px;
+}
+.card{
+  padding: 24px !important;
+}
+/* SOSYAL İKONLAR: BUTON KUTUSU KALKSİN, İKON BÜYÜSÜN */
+.iconbtn{
+  width: auto !important;
+  height: auto !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 6px 8px !important;
+  font-size: 30px !important; /* ikon boyutu */
+  color: #0b3a43 !important;
+}
+
+.iconbtn:hover{
+  transform: translateY(-1px) !important;
+  color: var(--cyan2) !important;
+}
+
+.icons{ 
+  gap: 14px !important; 
+  margin-top: 14px !important;
+}
+/* Admin bar'daki profil fotoğrafını gizle */
+#wpadminbar .ab-item img,
+#wpadminbar .avatar {
+  display: none !important;
+}
+/* TELEFON & MAIL YAZILARI */
+.note {
+  font-size: 17px !important;
+  line-height: 1.8 !important;
+  margin-top: 16px !important;
+	
+}
+
+.note b {
+	
+  font-weight: 500;
+	
+}
+
+/* SOL BİLGİ KARTINI DARALT */
+.grid-hero .card:first-child {
+  padding: 22px 26px !important;
+}
+/* Navbar scroll'da yapışmasın */
+.nav{
+  position: static !important;
+  top: auto !important;
+}
+/* Site genelinde linkler */
+a {
+  font-size: 17px;
+  font-weight: 500;
+}
+/* ========== PROJE SLIDER (2 kart + yarım görünen yanlar) ========== */
+.proj-wrap{
+  position: relative;
+  margin-top: 14px;
+}
+
+.proj-viewport{
+  overflow: hidden;                 /* taşan kısımlar gizlenir */
+  padding: 10px 56px;               /* oklar için boşluk */
+}
+
+.proj-track{
+  display: flex;
+  gap: 18px;
+  will-change: transform;
+  transition: transform .45s ease;  /* geçiş efekti */
+}
+
+/* 2 kart ekranda + yanlardan yarım görünsün (viewport padding sayesinde) */
+.proj-card{
+  flex: 0 0 calc(50% - 9px);        /* 2 kart */
+  min-width: calc(50% - 9px);
+}
+
+/* Kartın içindeki link/ikon daha şık */
+.proj-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+	color: var(--cyan2);
+  font-weight: 500;
+  margin-top: 10px;
+  font-size: 16px;
+}
+.proj-card {
+	 font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+}
+
+/* Oklar */
+.proj-arrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,188,212,.35);
+  background: rgba(255,255,255,.65);
+  box-shadow: 0 10px 24px rgba(2,8,23,.12);
+  color: var(--cyan2);
+  font-size: 25px;
+  cursor: pointer;
+  z-index: 5;
+  transition: transform .15s ease, background .15s ease;
+}
+.proj-arrow:hover{
+  transform: translateY(-50%) scale(1.05);
+  background: rgba(255,255,255,.85);
+}
+/*
+.proj-arrow.left{ left: 8px; }
+.proj-arrow.right{ right: 8px; }
+*/
+.proj-arrow.left{ left: -24px !important; }
+.proj-arrow.right{ right: -24px !important; }
+
+/* Yarım görünen kartlar "fade" gibi olsun */
+.proj-viewport::before,
+.proj-viewport::after{
+  content:"";
+  position:absolute;
+  top:0; bottom:0;
+  width: 56px;
+  pointer-events:none;
+  z-index: 4;
+}
+.proj-viewport::before{
+  left:0;
+  background: linear-gradient(to right, rgba(245,245,245,1), rgba(245,245,245,0));
+}
+.proj-viewport::after{
+  right:0;
+  background: linear-gradient(to left, rgba(245,245,245,1), rgba(245,245,245,0));
+}
+
+/* Mobilde 1 kart göster */
+@media (max-width: 900px){
+  .proj-card{
+    flex: 0 0 100%;
+    min-width: 100%;
+  }
+  .proj-viewport{
+    padding: 50px 50px;
+  }
+}
+.proj-viewport{
+  padding-left: 50px !important;
+  padding-right: 70px !important;
+  box-sizing: border-box !important;
+  overflow: hidden;
+}
+
+/* Okların arkasındaki yuvarlakları kaldır */
+.proj-arrow{
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+/* Ok ikonlarını büyüt */
+.proj-arrow{
+  font-size: 60px !important;  /* ok boyutu */
+  color: var(--cyan2) !important;
+}
+
+
+/* Okları dışarı al */
+.proj-arrow.left{
+  left: px !important;
+}
+
+.proj-arrow.right{
+  right: -24px !important;
+}
+/* Okları biraz daha aşağı al */
+.proj-arrow{
+  top: 30% !important;
+
+}
+/* === MOBIL NAV ÇAKIŞMA FIX === */
+@media (max-width: 768px){
+
+  /* nav içindeki her şeyi akışa geri al */
+  .nav, .nav *{
+    position: static !important;
+    transform: none !important;
+    float: none !important;
+  }
+
+  /* nav-inner kesin flex olsun ve alt alta dizsin */
+  .nav-inner{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  /* linkler üst üste binmesin: wrap + center */
+  .navlinks{
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .navlinks a{
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 6px 10px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+}
+/* === MOBIL ANCHOR / SECTION DÜZELTME === */
+@media (max-width: 768px){
+  section, .section, .block, .container{
+    position: relative !important;
+  }
+
+  /* Başlıklar üst üste biniyorsa */
+  h1, h2, h3, p{
+    position: relative !important;
+    z-index: 1 !important;
+  }
+}
+
+/* WPForms genel alan */
+.wpforms-form {
+  max-width: 100%;
+}
+
+/* Input ve textarea */
+.wpforms-form input,
+.wpforms-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Focus (tıklanınca) */
+.wpforms-form input:focus,
+.wpforms-form textarea:focus {
+  outline: none;
+  
+
+}
+
+/* Textarea boy */
+.wpforms-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Gönder butonu */
+.wpforms-form .wpforms-submit {
+  width: 100%;
+  padding: 15px;
+  border-radius: 15px;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #00e5ff, #3cf2ff);
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover efekti */
+.wpforms-form .wpforms-submit:hover {
+	 background: linear-gradient(90deg, #00cfe8, #00e5ff);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 229, 255, 0.4);
+}
+/* Daha güçlü hedefleme */
+div.wpforms-container-full .wpforms-form input,
+div.wpforms-container-full .wpforms-form textarea{
+  width: 100% !important;
+  padding: 14px !important;
+  margin-bottom: 15px !important;
+  border-radius: 10px !important;
+  border: 1px solid #ddd !important;
+  font-size: 16px !important;
+  background-color: #fff !important;
+}
+
+/* Focus değişmesin */
+div.wpforms-container-full .wpforms-form input:focus,
+div.wpforms-container-full .wpforms-form textarea:focus{
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: #ddd !important;
+}
+
+/* Gönder butonu */
+div.wpforms-container-full .wpforms-form button.wpforms-submit{
+	 display: flex !important;
+  align-items: center !important;   /* dikey ortalama */
+  justify-content: center !important;
+  width: 100% !important;
+  padding: 30px !important;
+  border-radius: 20px !important;
+  border: none !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  background: linear-gradient(90deg, #00e5ff, #3cf2ff) !important;
+  color: #000 !important;
+  cursor: pointer !important;
+}
+
+/* Hover’da renk değişmesin + yazı siyah kalsın */
+div.wpforms-container-full .wpforms-form button.wpforms-submit:hover{
+  background: linear-gradient(90deg, #00e5ff, #3cf2ff) !important;
+  color: #000 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 229, 255, 0.4);
+}
+/* Sadece Sertifikalar listesinin yazısını büyüt */
+#sertifikalar ul.list,
+#sertifikalar ul.list li {
+  font-size: 18px !important;
+}
+
+#yetenekler ul.list,
+#yetenekler ul.list li {
+  font-size: 18px !important;
+}
+.wpforms-confirmation-container {
+  font-size: 18px;
+}
+/* burada ek olarak nav barı ayarlaması 
+ */
+/* NAVBAR dış kabuk – asıl genişliği buradan kontrol ediyoruz */
+header.nav{
+  width: min(1400px, calc(100% - 48px)); /* max genişlik + kenar boşluk */
+  margin: 24px auto;                     /* ortala + üst-alt boşluk */
+  border-radius: 24px;                  /* yuvarlak köşe (isteğe bağlı) */
+}
+
+/* İç yapı artık header'ın genişliğine uysun */
+header.nav .nav-inner{
+  max-width: 100%;
+  width: 100%;
+  padding: 0 30px
+
+}
+/* buradan sonra mobil değişikler 
+ * başlıyor*/
+
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  display:block;
+}
+/* ========== MOBİL TOPARLAMA (en kritik) ========== */
+@media (max-width: 768px){
+
+  /* Navbar */
+  .nav{ position: sticky !important; top:0 !important; height:auto !important; }
+  .nav-inner{ flex-direction: column !important; gap:10px !important; padding: 10px 12px !important; }
+  .cta-wrapper{ width:100% !important; }
+  .cta{ width:100% !important; justify-content:center !important; }
+
+  /* İstersen mobilde menüyü kapat (en temiz çözüm) */
+  .navlinks{ display:none !important; }
+
+  /* Hero kartı: her şeyi ortala + soldan itmeleri kaldır */
+  .hero-title,
+  .hero-sub,
+  .icons,
+  .btnrow,
+  .note{
+    margin-left: 0 !important;
+    text-align: center !important;
+  }
+
+  .icons{ justify-content: center !important; }
+  .btnrow{ justify-content: center !important; }
+
+  /* Telefon/mail satırı taşmasın */
+  .note{
+    display:flex !important;
+    flex-direction: column !important;
+    align-items:center !important;
+    gap: 10px !important;
+  }
+
+  /* Proje slider taşma/padding daha dengeli */
+  .proj-viewport{
+    padding: 10px 42px !important;
+  }
+}
+/* MOBİLDE NAVBAR KAPAT */
+@media (max-width: 900px){
+  header.nav{ 
+    display: none !important;
+  }
+  /* navbar yokken en üst boşluk kalmasın */
+  main.wrap{
+    padding-top: 18px !important;
+  }
+}
+/* PROJE OKLARI HİZA FIX */
+.proj-wrap{ position: relative !important; }
+
+.proj-arrow{
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  line-height: 1 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+
+  z-index: 10 !important;
+}
+
+/* Soldaki/sağdaki konum */
+.proj-arrow.left{
+  left: -24px !important;   /* istersen -10px yap */
+}
+.proj-arrow.right{
+  right: -24px !important;  /* istersen -10px yap */
+}
+
+/* Sende olan HATALI satırı ezelim: left: px */
+.proj-arrow.left{ left: -24px !important; }
+
+
+/* ===== MOBİLDE OK YOK, SWIPE VAR ===== */
+@media (max-width: 900px){
+
+  /* Okları sadece mobilde gizle */
+  .proj-arrow{
+    display: none !important;
+  }
+
+  /* Viewport'u yatay kaydırılabilir yap */
+  .proj-viewport{
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding: 12px 16px !important;   /* ok boşluklarını kapat */
+  }
+
+  /* Track artık JS transform'a bağlı olmasın */
+  .proj-track{
+    transform: none !important;
+    transition: none !important;
+    display: flex !important;
+    gap: 16px !important;
+  }
+
+  /* Mobilde tek kart, swipe ile geç */
+  .proj-card{
+    flex: 0 0 88% !important;
+    min-width: 88% !important;
+    scroll-snap-align: start;
+  }
+}
+/* ===== MOBİL SWIPE: KART TAM GÖRÜNSÜN ===== */
+@media (max-width: 900px){
+
+  /* oklar mobilde yok */
+  .proj-arrow{ display:none !important; }
+
+  /* fade katmanları kartı kesiyorsa kapat */
+  .proj-viewport::before,
+  .proj-viewport::after{
+    display:none !important;
+  }
+
+  /* yatay kaydırma */
+  .proj-viewport{
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+
+    /* kritik: kartın tam oturması için */
+    padding: 0 16px !important;
+    scroll-padding-left: 16px;
+    scroll-padding-right: 16px;
+  }
+
+  /* track */
+  .proj-track{
+    display:flex !important;
+    gap: 12px !important;
+    transform:none !important;
+    transition:none !important;
+  }
+
+  /* kritik: kart TAM genişlik */
+  .proj-card{
+    flex: 0 0 calc(100% - 0px) !important;
+    min-width: calc(100% - 0px) !important;
+    scroll-snap-align: start;
+  }
+}
+/* MOBİLDE ÜST BOŞLUĞU %80 AZALT */
+@media (max-width: 900px){
+  main.wrap{
+    padding-top: 0px !important;   /* 18px yerine daha az */
+  }
+
+  /* İlk bölümün üst marginini de azalt */
+  .grid-hero{
+    margin-top: 0px !important;    /* 18px yerine daha az */
+  }
+}
+
