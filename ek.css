@@ -884,4 +884,18 @@ header.nav .nav-inner{
     margin-top: 0px !important;    /* 18px yerine daha az */
   }
 }
+/* form ile değişikleri burada */
+.success-box{
+  background:#d9ffcc;
+  border:1px solid #9fe870;
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:20px;
+  font-weight:500;
+}
+/*
+.wpforms-confirmation-container-full{
+  display:none !important;
+}
 
+*/
